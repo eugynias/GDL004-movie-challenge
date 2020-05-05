@@ -1,10 +1,11 @@
 import React from 'react';
-import Styles from './Components-CSS/Ejemplo.module.css'
+// import Styles from './Components-CSS/Ejemplo.module.css'
+import FetchData from './Components-JS/FetchData'
 
 
 function App() {
   return (
-      <h1 className={Styles.background}> Nos va a ir increible <br></br>:D </h1>
+    <FetchData/>
       
   )
 }
