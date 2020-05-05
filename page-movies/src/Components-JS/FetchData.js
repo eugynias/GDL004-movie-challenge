@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App mt">
       <h1>Hello React</h1>
       <form className="serch-form">
         <input className="serch-bar" type="text" />
