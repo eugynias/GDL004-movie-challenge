@@ -1,10 +1,16 @@
 import React from 'react';
+// import Styles from './Components-CSS/Ejemplo.module.css'
+import FetchData from './Components-JS/FetchData';
+import Navbar from './Components-JS/Navbar';
+
 
 
 function App() {
   return (
-      <h1> Nos va a ir increible</h1>
-      
+    <>
+        <Navbar />
+        <FetchData/>
+    </>
   )
 }
 
