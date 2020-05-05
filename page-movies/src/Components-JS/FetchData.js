@@ -5,6 +5,9 @@ function App() {
   const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
+  const [disabledNext, setDisabledNext]= useState(false);
+  const [disabledBack, setDisabledBack]= useState(false);
+  
   useEffect(() => {
     getMovie();
   }, []);
@@ -20,24 +23,32 @@ function App() {
     console.log(data);
     setListMovie(data.Search)
     //setListMovie([...listMovie, ...data.Search])//nos agrega a la misma lista
-    return data;
+    return data;  
   };
 
   const pageChange = (e) =>{
-    console.log(typeof e.target.innerHTML);
     if ( e.target.innerHTML === '+'){ 
-      // if (page > 30){
-
-      // }     
       setPage(page + 1) 
-      getMovie()
-    } else if (e.target.innerHTML === '-') {
-      setPage(page - 1) 
-      getMovie()
+      if(page<10){
+        getMovie()
+        setDisabledBack(false)
+      }else{
+        setDisabledNext(true)
+          
+      }
+      
+    } else if (e.target.innerHTML === '-'){
+        if(page >= 1){
+          setPage(page - 1) 
+          setDisabledBack(false)
+        }else{
+          setDisabledBack(true)
+          setPage(1) 
+        }
     }
-    
   } 
   
+ 
 
   return (
     <div className="App">
@@ -59,8 +70,8 @@ function App() {
       <ul>
         {listMovie.map(item => <li> {item.Title}</li>)}
       </ul>
-      <button disabled={true} onClick={pageChange} className="serch-button" type="button">-</button> 
-      <button disableb={false} onClick={pageChange} className="serch-button" type="button">+</button>
+      <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
+      <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
     </div>
   );
 }
