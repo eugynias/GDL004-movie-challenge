@@ -3,6 +3,7 @@ import CadsMovies from './CardsMovies'
 
 
 
+
 function Fetch() {
   const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
@@ -10,15 +11,17 @@ function Fetch() {
   const [disabledNext, setDisabledNext]= useState(false);
   const [disabledBack, setDisabledBack]= useState(false);
   
+
   useEffect(() => {
     getMovie();
   }, []);
   
   
 
-  const MOVIE_API_URL = `http://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
-  
 
+  const MOVIE_API_URL = `http://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
+
+  
   const getMovie = async () => {
     const response = await fetch(MOVIE_API_URL);
     const data = await response.json();
@@ -78,8 +81,10 @@ return (
       </div>
 
 
+
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
+
     </div>
   );
 }
