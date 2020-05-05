@@ -1,12 +1,16 @@
 import React from 'react';
 // import Styles from './Components-CSS/Ejemplo.module.css'
-import FetchData from './Components-JS/FetchData'
+import FetchData from './Components-JS/FetchData';
+import Navbar from './Components-JS/Navbar';
+
 
 
 function App() {
   return (
-    <FetchData/>
-      
+    <>
+        <Navbar />
+        <FetchData/>
+    </>
   )
 }
 

@@ -27,7 +27,7 @@ function Fetch() {
     //setListMovie([...listMovie, ...data.Search])//nos agrega a la misma lista
     return data;  
   };
-
+  
   const pageChange = (e) =>{
     if ( e.target.innerHTML === '+'){ 
       if(page <10){
@@ -50,8 +50,6 @@ function Fetch() {
     }
   } 
   
- 
-
 return (
     <div className="App">
         <h1>Hello React</h1>
