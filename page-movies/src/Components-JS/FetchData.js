@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import CadsMovies from './CardsMovies'
 
 
-function App() {
+
+function Fetch() {
   const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
@@ -34,7 +36,6 @@ function App() {
         setDisabledBack(false)
       }else{
         setDisabledNext(true)
-          
       }
       
     } else if (e.target.innerHTML === '-'){
@@ -51,26 +52,34 @@ function App() {
   
  
 
-  return (
+return (
     <div className="App">
-      <h1>Hello React</h1>
-      <form className="serch-form"
-      onSubmit={ (e) => { 
-        e.preventDefault()
-        getMovie()
-      }}    
-      >        
-        <input className="serch-bar" type="text" 
-          onChange={((e)=>{         
-          setSearchName(e.target.value)
-        })}/>
-        <button className="serch-button" type="submit">
-          Serch
-        </button>
-      </form>
-      <ul>
-        {listMovie.map(item => <li> {item.Title}</li>)}
-      </ul>
+        <h1>Hello React</h1>
+        <form className="serch-form"
+            onSubmit={ (e) => { 
+                e.preventDefault()
+                getMovie()
+            }}    
+        >        
+            <input className="serch-bar" type="text" 
+            onChange={((e)=>{         
+            setSearchName(e.target.value)
+            })}/>
+            <button className="serch-button" type="submit">
+            Serch
+            </button>
+        </form>
+
+      <div>
+        {listMovie.map(item =>(  
+            <div   key={item.Title}>
+                <CadsMovies  data={item}/>
+            </div> 
+            
+         ))}
+      </div>
+
+
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
     </div>
@@ -78,4 +87,4 @@ function App() {
 }
 
 
-export default App
+export default Fetch
