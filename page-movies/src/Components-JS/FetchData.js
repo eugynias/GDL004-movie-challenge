@@ -28,8 +28,8 @@ function App() {
 
   const pageChange = (e) =>{
     if ( e.target.innerHTML === '+'){ 
-      setPage(page + 1) 
-      if(page<10){
+      if(page <10){
+        setPage(page + 1) 
         getMovie()
         setDisabledBack(false)
       }else{
@@ -41,6 +41,7 @@ function App() {
         if(page >= 1){
           setPage(page - 1) 
           setDisabledBack(false)
+          getMovie()
         }else{
           setDisabledBack(true)
           setPage(1) 
