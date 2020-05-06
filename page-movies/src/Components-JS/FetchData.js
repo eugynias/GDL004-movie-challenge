@@ -16,10 +16,10 @@ function Fetch() {
     getMovie();
   }, []);
   
-  
+  console.log(listMovie)
 
 
-  const MOVIE_API_URL = `http://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
+  const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
 
   
   const getMovie = async () => {
@@ -44,8 +44,8 @@ function Fetch() {
     } else if (e.target.innerHTML === '-'){
         if(page >= 1){
           setPage(page - 1) 
-          setDisabledBack(false)
           getMovie()
+          setDisabledNext(false)
         }else{
           setDisabledBack(true)
           setPage(1) 
@@ -72,8 +72,10 @@ return (
         </form>
 
       <div>
+          
         {listMovie.map(item =>(  
-            <div   key={item.Title}>
+                        
+            <div  key={item.Title}>
                 <CadsMovies  data={item}/>
             </div> 
             
