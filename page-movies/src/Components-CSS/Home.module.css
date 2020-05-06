@@ -1,0 +1,26 @@
+.title{
+    text-align: center;
+    margin-top: 5%;
+    font-family: 'Geo', sans-serif;
+    font-size: 8em;
+}
+.avatars{
+    
+    background-color: royalblue;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+}
+
+.avatarSuperMan{
+    background-color: black;
+    min-width: 150px;
+    width: 20%;
+}
+
+.avatarBatman{
+    background-color: black;
+    min-width: 150px;
+    width: 20%;
+}
