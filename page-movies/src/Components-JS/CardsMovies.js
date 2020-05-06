@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import Styles from '../Components-CSS/CardMoviePoster.module.css';
 
+
+
 function CadsMovies({dataItem}) {
     
  //const titleMovie = dataItem.Title;
@@ -18,7 +20,7 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
     setNewFetch(data);
   };
 
-  getMovie2();
+ // getMovie2();
 
 /*   const getData = () => {
    return new Promise ((resolve, reject) => {
@@ -45,6 +47,7 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
                 </div>
             </div>
     );
+
   }
   
   export default CadsMovies;
