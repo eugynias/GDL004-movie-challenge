@@ -4,7 +4,7 @@ import Styles from './Components-CSS/Home.module.css'
 
 function Home (){
     return(
-        <div>
+        <div className={Styles.home}>
             <NavBar/>
             <h1 className={Styles.title}>
                 How is the Best?
