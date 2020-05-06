@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 
 
 
-import {MovieContext} from "./MovieContext"
+import {MovieContext} from "./MovieContext";
 
 
 function Fetch() {
@@ -77,23 +77,22 @@ return (
 
 
          <div className="row">  
-        {listMovie.map(item =>(            
+           {listMovie.map(item =>(            
             <div className="col-sm-4" key={item.Title}>
                 <CadsMovies  dataItem={item}/>
                 <Navbar dataItem={item} />
             </div>  
-         ))}
+           ))}
          </div>
       </div>
   
-    <div className="container mt-4">
-      <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
-      <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
-</div>
-    </div>
-
-  );
+       <div className="container mt-4">
+         <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
+         <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
+       </div>
+       </div>
+    );
 }
 
 
-export default Fetch
+export default Fetch;
