@@ -1,6 +1,7 @@
 .home{
     background-color: black;
     width: 100vw;
+    
     height: 100vh;
 }
 .title{
@@ -11,21 +12,34 @@
     color: white;
 }
 .avatars{
-    background-color: royalblue;
-    display: grid;
-    gap: 1em;
-    grid-template-columns: repeat(2, 1fr);
-    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
 .avatarSuperMan{
-    
+    justify-self: center;
     min-width: 150px;
-    width: 20%;
+    padding: 2rem;
+}
+
+.avatarSuperMan:hover{
+    
+    width: 620px;
+
 }
 
 .avatarBatman{
     
     min-width: 150px;
-    width: 20%;
+
+}
+
+.avatarBatman:hover{
+    
+    width: 620px;
+
 }

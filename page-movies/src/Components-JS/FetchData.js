@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import CadsMovies from './CardsMovies';
 import Navbar from './Navbar';
 
