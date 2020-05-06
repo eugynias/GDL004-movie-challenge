@@ -12,7 +12,7 @@ function App () {
     <Router>
     <MovieProvider value="Hello">
      <div className="App">
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
             <Route path="/home"  component={Home} />
             <Route path="/fetchData" component={FetchData} />

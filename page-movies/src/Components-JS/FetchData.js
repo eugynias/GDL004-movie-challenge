@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import CadsMovies from './CardsMovies';
 import Navbar from './Navbar';
 
 
 
-import {MovieContext} from "./MovieContext"
-
-
 function Fetch() {
-    const [searchName, setSearchName] = useState('Batman');
+  const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   const [disabledNext, setDisabledNext]= useState(false);
@@ -18,7 +16,7 @@ function Fetch() {
     getMovie();
   }, []);
   
- 
+  console.log(listMovie)
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
   
   
@@ -28,11 +26,10 @@ function Fetch() {
     console.log(data);
     setListMovie(data.Search)
     //setListMovie([...listMovie, ...data.Search])//nos agrega a la misma lista
-    return data;
+    return data;  
   };
   
   const pageChange = (e) =>{
-    console.log(typeof e.target.innerHTML);
     if ( e.target.innerHTML === '+'){ 
       if(page <10){
         setPage(page + 1) 
@@ -52,7 +49,6 @@ function Fetch() {
           setPage(1) 
         }
     }
-    
   } 
   
 return (
@@ -69,10 +65,10 @@ return (
             setSearchName(e.target.value)
             })}/>
             <button className="serch-button" type="submit">
+            Serch
             Search
             </button>
         </form>
-
 
          <div className="row">  
         {listMovie.map(item =>(            
@@ -81,17 +77,13 @@ return (
                 <Navbar dataItem={item} />
             </div>  
          ))}
-         </div>
       </div>
-  
-    <div className="container mt-4">
+   
+   <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
 </div>
     </div>
-
   );
 }
-
-
 export default Fetch
