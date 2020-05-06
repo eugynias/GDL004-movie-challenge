@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import '../Components-CSS/Navbar.css'
 
 const Navbar = ({dataItem}) => {
 
@@ -8,7 +8,7 @@ console.log('click');
 }
     return (  
     <div className="container">
-        <nav className="navbar navbar-toggler navbar-light px-0 fixed-top">
+        <nav className="navbar navbar-toggler navbar-light navbar-colorBG px-0 fixed-top">
             <a className="navbar-brand" href="#">Logo</a> 
 
             <button 
