@@ -4,6 +4,8 @@ import Navbar from './Navbar';
 
 
 
+import {MovieContext} from "./MovieContext"
+
 
 function Fetch() {
   const [searchName, setSearchName] = useState('Batman');
@@ -12,7 +14,6 @@ function Fetch() {
   const [disabledNext, setDisabledNext]= useState(false);
   const [disabledBack, setDisabledBack]= useState(false);
   
-
   useEffect(() => {
     getMovie();
   }, []);
@@ -29,10 +30,11 @@ function Fetch() {
     console.log(data);
     setListMovie(data.Search)
     //setListMovie([...listMovie, ...data.Search])//nos agrega a la misma lista
-    return data;  
+    return data;
   };
   
   const pageChange = (e) =>{
+    console.log(typeof e.target.innerHTML);
     if ( e.target.innerHTML === '+'){ 
       if(page <10){
         setPage(page + 1) 
@@ -52,6 +54,7 @@ function Fetch() {
           setPage(1) 
         }
     }
+    
   } 
   
 return (
@@ -72,6 +75,7 @@ return (
             </button>
         </form>
 
+
          <div className="row">  
         {listMovie.map(item =>(            
             <div className="col-sm-4" key={item.Title}>
@@ -79,13 +83,15 @@ return (
                 <Navbar dataItem={item} />
             </div>  
          ))}
+         </div>
       </div>
-   
-   <div className="container mt-4">
+  
+    <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
 </div>
     </div>
+
   );
 }
 
