@@ -5,7 +5,7 @@ import CadsMovies from './CardsMovies'
 
 
 function Fetch() {
-  const [searchName, setSearchName] = useState('Batman');
+    const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   const [disabledNext, setDisabledNext]= useState(false);
@@ -16,9 +16,7 @@ function Fetch() {
     getMovie();
   }, []);
   
-  console.log(listMovie)
-
-
+ 
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
 
   
