@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CadsMovies from './CardsMovies'
+import CadsMovies from './CardsMovies';
+import Navbar from './Navbar';
 
 
 
@@ -67,7 +68,7 @@ return (
             setSearchName(e.target.value)
             })}/>
             <button className="serch-button" type="submit">
-            Serch
+            Search
             </button>
         </form>
 
@@ -75,6 +76,7 @@ return (
         {listMovie.map(item =>(            
             <div className="col-sm-4" key={item.Title}>
                 <CadsMovies  dataItem={item}/>
+                <Navbar dataItem={item} />
             </div>  
          ))}
       </div>
