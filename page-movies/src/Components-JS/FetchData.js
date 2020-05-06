@@ -71,19 +71,14 @@ return (
             </button>
         </form>
 
-      <div>
-          
-        {listMovie.map(item =>(  
-                        
-            <div  key={item.Title}>
+         <div className="row">  
+        {listMovie.map(item =>(            
+            <div className="col-sm-4" key={item.Title}>
                 <CadsMovies  data={item}/>
-            </div> 
-            
+            </div>  
          ))}
       </div>
-
-
-
+   
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
 
