@@ -1,5 +1,5 @@
 import React from "react";
-// import Nav from "./Nav";
+ import Navbar from "./Components-JS/Navbar";
 // import MovieList from "./MovieList";
 import {MovieProvider} from "./MovieContext";
 import FetchData from "./Components-JS/FetchData";
@@ -12,7 +12,7 @@ function App () {
     <Router>
     <MovieProvider value="Hello">
      <div className="App">
-        <Nav />
+        <Navbar />
         <Switch>
             <Route path="/home"  component={Home} />
             <Route path="/fetchData" component={FetchData} />

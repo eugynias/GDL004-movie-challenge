@@ -85,15 +85,16 @@ return (
          ))}
          </div>
       </div>
+      
   
     <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
-</div>
     </div>
-
+ 
+        
   );
 }
 
 
-export default Fetch
+export default Fetch;
