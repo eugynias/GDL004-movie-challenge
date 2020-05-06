@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import CadsMovies from "./CardsMovies";
+import CadsMovies from './CardsMovies';
+import Navbar from './Navbar';
+
+
 
 import {MovieContext} from "./MovieContext"
 
@@ -19,7 +22,7 @@ function Fetch() {
 
 
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
-
+  
   
   const getMovie = async () => {
     const response = await fetch(MOVIE_API_URL);
@@ -68,21 +71,27 @@ return (
             setSearchName(e.target.value)
             })}/>
             <button className="serch-button" type="submit">
-            Serch
+            Search
             </button>
         </form>
 
-      <div>
-          
-        {listMovie.map(item =>(  
-                        
-            <div  key={item.Title}>
-                <CadsMovies  data={item}/>
-            </div> 
-        
+
+         <div className="row">  
+        {listMovie.map(item =>(            
+            <div className="col-sm-4" key={item.Title}>
+                <CadsMovies  dataItem={item}/>
+                <Navbar dataItem={item} />
+            </div>  
          ))}
          </div>
       </div>
+  
+    <div className="container mt-4">
+      <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
+      <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
+</div>
+    </div>
+
   );
 }
 
