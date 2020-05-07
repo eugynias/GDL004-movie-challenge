@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import CadsMovies from './CardsMovies';
 import Navbar from './Navbar';
+import fetchData from './GetMovie';
 
-
-
-function Fetch() {
-  const [searchName, setSearchName] = useState('superman');
+function Fetch({searchVal}) {
+  const [searchName, setSearchName] = useState(searchVal);
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   const [disabledNext, setDisabledNext]= useState(false);
@@ -15,17 +14,9 @@ function Fetch() {
     getMovie();
   }, []);
   
-  console.log(listMovie)
-  const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
-  
-  
   const getMovie = async () => {
-    const response = await fetch(MOVIE_API_URL);
-    const data = await response.json();
-    console.log(data);
-    setListMovie(data.Search)
-    //setListMovie([...listMovie, ...data.Search])//nos agrega a la misma lista
-    return data;  
+    const result = await fetchData(searchName, page);
+    setListMovie(result);
   };
   
   const pageChange = (e) =>{

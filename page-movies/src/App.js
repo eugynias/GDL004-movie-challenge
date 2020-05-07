@@ -16,8 +16,8 @@ function App () {
         <Navbar />
         <Switch>
             <Route path="/Home"  component={Home} />
-            <Route path="/Superman" component={FetchData} />
-            <Route path="/Batman" component={Batman} />
+            <Route path="/Superman" component={() => <FetchData searchVal={'superman'}/>}/>
+            <Route path="/Batman" component={() => <FetchData searchVal={'batman'}/>} />
         </Switch>
      </div>
     </MovieProvider>
