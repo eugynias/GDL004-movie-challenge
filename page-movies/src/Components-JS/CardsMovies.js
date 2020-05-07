@@ -5,8 +5,10 @@ import Styles from '../Components-CSS/CardMoviePoster.module.css';
 
 function CadsMovies({dataItem}) {
     
-const titleMovie = dataItem.Title;
-//const [titleMovie, settitleMovie] = useState(dataItem.Title)
+
+ //const titleMovie = dataItem.Title;
+const [titleMovie] = useState(dataItem.Title)
+
 const [newFetch, setNewFetch] = useState('')
 
 /* 'https://www.omdbapi.com/?apikey=745c4feb&t=Friends&season=5' */
@@ -19,20 +21,7 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
     setNewFetch(data);
     return data
   };
- // getMovie2();
 
-/*   const getData = () => {
-   return new Promise ((resolve, reject) => {
-        reject error
-        resolve getMovie2();  
-    })
-    } 
-    getData().then .catch */
-/* const objPropsFe = {
-  score: newFetch.imdbRatingn,
-    age: newFetch.Rated,
-    time: runtem
-} */
     
     return (
         <div className="container d-flex justify-content-center mt-5">
