@@ -4,8 +4,8 @@ import Navbar from './Navbar';
 
 
 
-function Fetch() {
-  const [searchName, setSearchName] = useState('superman');
+function Batman() {
+  const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   const [disabledNext, setDisabledNext]= useState(false);
@@ -70,4 +70,4 @@ return (
     </div>
   );
 }
-export default Fetch
+export default Batman

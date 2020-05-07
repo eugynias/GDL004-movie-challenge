@@ -4,9 +4,9 @@ import '../Components-CSS/Navbar.css'
 const Navbar = ({dataItem}) => {
 
 const showScore = () => {
-console.log('click');
+
 }
-    return (  
+    return (
     <div className="container">
         <nav className="navbar navbar-toggler navbar-light navbar-colorBG px-0 fixed-top">
             <a className="navbar-brand" href="#">Logo</a> 

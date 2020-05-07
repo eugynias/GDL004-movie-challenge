@@ -10,17 +10,17 @@ function Home (){
         <div className={Styles.home}>
             <NavBar/>
             <h1 className={Styles.title}>
-                How is the Best?
+                Who is the Best?
             </h1>
             <div className={Styles.avatars} >
                 <div>
-                    <Link to='/fetchdata'>
+                    <Link to='/Superman'>
                     <img  className={Styles.avatarSuperMan} alt='icons' src='https://image.flaticon.com/icons/png/512/1674/1674292.png'/>
                     </Link>
                 </div>
                 
                 <div>
-                    <Link to='/fetchdata'>
+                    <Link to='/Batman'>
                         <img  className={Styles.avatarBatman} alt='icons' src='https://image.flaticon.com/icons/png/512/1674/1674291.png'/>
                     </Link>
                 </div>
