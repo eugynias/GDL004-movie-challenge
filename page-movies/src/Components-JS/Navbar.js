@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Image  from '../Components-CSS/img/logo.svg';
+import Search from './Search';
 
-
-const Navbar = ({dataItem}) => {
+const Navbar = ({ setSearchName }) => {
 
 const showScore = () => {
 console.log('click');
@@ -24,7 +24,9 @@ console.log('click');
             >
             <span className="navbar-toggler-icon"></span>
             </button>
-        
+
+            <Search setSearchName={setSearchName} />
+
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             
                 <ul className="navbar-nav mr-auto">
