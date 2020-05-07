@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import CadsMovies from './CardsMovies';
 import Navbar from './Navbar';
 
-function Fetch() {
-  const [searchName, setSearchName] = useState('superman');
+
+
+function Batman() {
+  const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   const [disabledNext, setDisabledNext]= useState(false);
@@ -12,8 +14,6 @@ function Fetch() {
   useEffect(() => {
     getMovie();
   }, []);
-
-
   
   console.log(listMovie)
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
@@ -22,6 +22,7 @@ function Fetch() {
   const getMovie = async () => {
     const response = await fetch(MOVIE_API_URL);
     const data = await response.json();
+    console.log(data);
     setListMovie(data.Search)
     //setListMovie([...listMovie, ...data.Search])//nos agrega a la misma lista
     return data;  
@@ -53,19 +54,20 @@ return (
     <div className="App">
         
 
-        <div className="row">  
+         <div className="row">  
         {listMovie.map(item =>(            
             <div className="col-sm-4" key={item.Title}>
                 <CadsMovies  dataItem={item}/>
                 <Navbar dataItem={item} />
             </div>  
-        ))}
+         ))}
       </div>
-  <div className="container mt-4">
+   
+   <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
-    </div>
+</div>
     </div>
   );
 }
-export default Fetch
+export default Batman

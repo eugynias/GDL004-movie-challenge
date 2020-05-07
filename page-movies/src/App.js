@@ -1,8 +1,9 @@
 import React from "react";
-// import Nav from "./Nav";
+ import Navbar from "./Components-JS/Navbar";
 // import MovieList from "./MovieList";
 import {MovieProvider} from "./MovieContext";
 import FetchData from "./Components-JS/FetchData";
+import Batman from './Components-JS/Batman'
 import Home from "./Home";
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import "./App.css";
@@ -12,10 +13,11 @@ function App () {
     <Router>
     <MovieProvider value="Hello">
      <div className="App">
-        {/* <Nav /> */}
+        <Navbar />
         <Switch>
-            <Route path="/home"  component={Home} />
-            <Route path="/fetchData" component={FetchData} />
+            <Route path="/Home"  component={Home} />
+            <Route path="/Superman" component={FetchData} />
+            <Route path="/Batman" component={Batman} />
         </Switch>
      </div>
     </MovieProvider>
