@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 
 
-import {MovieContext} from "../MovieContext";
+
 
 
 function Fetch() {

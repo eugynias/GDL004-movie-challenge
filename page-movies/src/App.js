@@ -2,8 +2,6 @@ import React from "react";
 
  import Navbar from "./Components-JS/Navbar";
 
-// import MovieList from "./MovieList";
-import {MovieProvider} from "./MovieContext";
 import FetchData from "./Components-JS/FetchData";
 import Batman from './Components-JS/Batman'
 import Home from "./Home";
@@ -13,7 +11,7 @@ import "./App.css";
 function App () {
   return(
     
-    <MovieProvider value="Hello">
+    
 
      <Router>
        <div className="App">
@@ -26,7 +24,7 @@ function App () {
         </Switch>
      </div>
      </Router>
-    </MovieProvider>
+    
     
   );
  }
