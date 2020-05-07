@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-
+import '../Components-CSS/FetchData.css';
 import CadsMovies from './CardsMovies';
 
 function Fetch({ page, setPage, listMovie }) {
@@ -42,9 +42,9 @@ return (
          })}
 
       </div>
-  <div className="container mt-4">
-      <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
-      <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
+  <div className="container paginations">
+      <button disabled={disabledBack} onClick={pageChange} className="pagination pagination-left" type="button">-</button> 
+      <button disabled={disabledNext} onClick={pageChange} className="pagination pagination-left" type="button">+</button>
     </div>
     </div>
   );
