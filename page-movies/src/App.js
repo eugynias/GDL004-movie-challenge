@@ -9,17 +9,21 @@ import "./App.css";
 
 function App () {
   return(
-    <Router>
+    
     <MovieProvider value="Hello">
-     <div className="App">
+     <Router>
+       <div className="App">
+
         <Navbar />
+    
         <Switch>
             <Route path="/home"  component={Home} />
             <Route path="/fetchData" component={FetchData} />
         </Switch>
      </div>
+     </Router>
     </MovieProvider>
-    </Router>
+    
   );
  }
 
