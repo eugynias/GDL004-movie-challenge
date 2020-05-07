@@ -18,7 +18,7 @@ function Home (){
                     <Link to='/FetchData'>
                     <img  className={Styles.avatarSuperMan} alt='icons' src='https://image.flaticon.com/icons/png/512/1674/1674292.png'/>
                     </Link>
-                
+                </div>
 
                 <div>
                     <Link to='/FetchData'>
@@ -26,8 +26,9 @@ function Home (){
                         <img  className={Styles.avatarBatman} alt='icons' src='https://image.flaticon.com/icons/png/512/1674/1674291.png'/>
                     </Link>
             </div>
+       
+            </div>
         </div>
-
     )
 }
 export default Home
