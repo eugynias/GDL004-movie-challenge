@@ -12,9 +12,15 @@ input[type=text] {
     background-size: 70% 70%;
     background-position: 190% 50%;
     box-shadow: 0px 6px 13px -3px rgba(0,0,0,0.75);
+    transition: width 1s;
 }
 
 ::placeholder {
     color:rgb(112, 112, 112);
     text-align: center;
+}
+
+input[type=text]:hover {
+    width: 200%;
+    transition: width 1s;
 }

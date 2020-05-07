@@ -19,7 +19,7 @@ function App () {
     const getMovie = async () => {
         const response = await fetch(MOVIE_API_URL);
         const data = await response.json();
-        setListMovie([...data.Search])
+        setListMovie(data.Search)
     };
     getMovie();
   }, [searchName, page]);
