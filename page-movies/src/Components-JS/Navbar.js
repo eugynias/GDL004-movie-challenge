@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
+
+import Image  from '../Components-CSS/img/logo.svg';
 import '../Components-CSS/Navbar.css'
+
 
 const Navbar = ({dataItem}) => {
 
@@ -8,8 +11,10 @@ const showScore = () => {
 }
     return (
     <div className="container">
-        <nav className="navbar navbar-toggler navbar-light navbar-colorBG px-0 fixed-top">
-            <a className="navbar-brand" href="#">Logo</a> 
+
+        <nav className="navbar navbar-toggler navbar-light bg-warning bg-warning px-0 fixed-top">
+            <img className="navbar-brand logoSmall" src={Image} />
+
 
             <button 
             className="navbar-toggler" 

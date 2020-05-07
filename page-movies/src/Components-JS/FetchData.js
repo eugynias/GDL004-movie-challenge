@@ -66,7 +66,7 @@ return (
    <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
-</div>
+    </div>
     </div>
   );
 }
