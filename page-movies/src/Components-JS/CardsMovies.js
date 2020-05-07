@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import Styles from '../Components-CSS/CardMoviePoster.module.css';
 
+
+
 function CadsMovies({dataItem}) {
     
- const titleMovie = dataItem.Title;
+const titleMovie = dataItem.Title;
 //const [titleMovie, settitleMovie] = useState(dataItem.Title)
 const [newFetch, setNewFetch] = useState('')
 
@@ -17,19 +19,17 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
     setNewFetch(data);
     return data
   };
-
-  //getMovie2();
+ // getMovie2();
 
 /*   const getData = () => {
    return new Promise ((resolve, reject) => {
         reject error
         resolve getMovie2();  
     })
-    }
- 
+    } 
     getData().then .catch */
 /* const objPropsFe = {
-   score: newFetch.imdbRatingn,
+  score: newFetch.imdbRatingn,
     age: newFetch.Rated,
     time: runtem
 } */
@@ -45,6 +45,7 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
                 </div>
             </div>
     );
+
   }
   
   export default CadsMovies;

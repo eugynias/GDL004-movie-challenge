@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import '../Components-CSS/Navbar.css'
 
+const Navbar = ({dataItem}) => {
 
-const Navbar = () => {
-
+const showScore = () => {
+console.log('click');
+}
     return (  
     <div className="container">
-        <nav className="navbar navbar-toggler navbar-light bg-warning bg-warning px-0 fixed-top">
+        <nav className="navbar navbar-toggler navbar-light navbar-colorBG px-0 fixed-top">
             <a className="navbar-brand" href="#">Logo</a> 
 
             <button 
@@ -25,12 +28,27 @@ const Navbar = () => {
             
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="#">Score</a>
+                    <a className="nav-link" href="#" onClick={showScore}>Score Movies</a>
                     </li> 
                     <li className="nav-item active">
-                    <a className="nav-link" href="#">Date</a>
+                    <a className="nav-link" href="#">Recent Movies</a>
                     </li>
                 </ul>
+
+               {/*  <form className="serch-form"
+                    onSubmit={ (e) => { 
+                        e.preventDefault()
+                        getMovie()
+                    }}    
+                >        
+                    <input className="serch-bar" type="text" 
+                    onChange={((e)=>{         
+                    setSearchName(e.target.value)
+                    })}/>
+                    <button className="serch-button" type="submit">
+                    Search
+                    </button>
+             </form> */}
 
             </div>
         </nav> 

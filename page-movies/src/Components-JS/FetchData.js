@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CadsMovies from './CardsMovies'
-
+import CadsMovies from './CardsMovies';
+import Navbar from './Navbar';
 
 function Fetch() {
   const [searchName, setSearchName] = useState('Batman');
@@ -9,12 +9,13 @@ function Fetch() {
   const [disabledNext, setDisabledNext]= useState(false);
   const [disabledBack, setDisabledBack]= useState(false);
   
-
   useEffect(() => {
     getMovie();
   }, []);
 
 
+  
+  console.log(listMovie)
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=745c4feb&s=${searchName}&page=${page}`
   
   
@@ -63,24 +64,23 @@ return (
             })}/>
             <button className="serch-button" type="submit">
             Serch
+            Search
             </button>
         </form>
 
-         <div className="row">  
+        <div className="row">  
         {listMovie.map(item =>(            
             <div className="col-sm-4" key={item.Title}>
                 <CadsMovies  dataItem={item}/>
+                <Navbar dataItem={item} />
             </div>  
-         ))}
+        ))}
       </div>
-   
-   <div className="container mt-4">
+  <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
 </div>
     </div>
   );
 }
-
-
 export default Fetch
