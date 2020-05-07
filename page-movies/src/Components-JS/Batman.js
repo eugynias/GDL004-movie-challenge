@@ -4,8 +4,8 @@ import Navbar from './Navbar';
 
 
 
-function Fetch() {
-  const [searchName, setSearchName] = useState('superman');
+function Batman() {
+  const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   const [disabledNext, setDisabledNext]= useState(false);
@@ -66,8 +66,8 @@ return (
    <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
-    </div>
+</div>
     </div>
   );
 }
-export default Fetch
+export default Batman
