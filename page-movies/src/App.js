@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // import MovieList from "./MovieList";
 import {MovieProvider} from "./MovieContext";
 import FetchData from "./Components-JS/FetchData";
+import Batman from './Components-JS/Batman'
 import Home from "./Home";
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import "./App.css";
@@ -43,6 +44,11 @@ function App () {
                     page={page}
                     setPage={setPage}
                     listMovie={listMovie}
+                    />}
+            />
+            <Route 
+                path="/Home"
+                component={() => <Home
                     />}
             />
         </Switch>

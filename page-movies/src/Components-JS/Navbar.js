@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
+
 import Image  from '../Components-CSS/img/logo.svg';
 import Search from './Search';
 
 const Navbar = ({ setSearchName }) => {
 
-const showScore = () => {
-console.log('click');
-}
-    return (  
+    return (
     <div className="container">
+
         <nav className="navbar navbar-toggler navbar-light bg-warning bg-warning px-0 fixed-top">
             <img className="navbar-brand logoSmall" src={Image} />
 
+            <Search setSearchName={setSearchName} />
+            
             <button 
             className="navbar-toggler" 
             type="button" 
@@ -25,33 +26,16 @@ console.log('click');
             <span className="navbar-toggler-icon"></span>
             </button>
 
-            <Search setSearchName={setSearchName} />
-
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="#" onClick={showScore}>Score Movies</a>
+                    <a className="nav-link" href="#">Score Movies</a>
                     </li> 
                     <li className="nav-item active">
                     <a className="nav-link" href="#">Recent Movies</a>
                     </li>
                 </ul>
-
-               {/*  <form className="serch-form"
-                    onSubmit={ (e) => { 
-                        e.preventDefault()
-                        getMovie()
-                    }}    
-                >        
-                    <input className="serch-bar" type="text" 
-                    onChange={((e)=>{         
-                    setSearchName(e.target.value)
-                    })}/>
-                    <button className="serch-button" type="submit">
-                    Search
-                    </button>
-             </form> */}
 
             </div>
         </nav> 
