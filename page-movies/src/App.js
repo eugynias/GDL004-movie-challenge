@@ -9,7 +9,7 @@ import "./App.css";
 
 function App () {
 
-    const [searchName, setSearchName] = useState('Batman');
+ const [searchName, setSearchName] = useState('Batman');
   const [page,setPage] = useState(1) //con el botón agregaría mas paginas
   const [listMovie, setListMovie] = useState([]);
   
