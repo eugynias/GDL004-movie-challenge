@@ -39,7 +39,7 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
     return (
         <div className="container d-flex justify-content-center mt-5">
             <div className="card shadow-lg mb-5 bg-white rounded"  style={{width: '18rem'}}>
-                <img onClick={}src={dataItem.Poster} style={{height: '22rem'}} alt="poster" />
+                <img src={dataItem.Poster} style={{height: '22rem'}} alt="poster" />
                 <div className="card-body" style={{height: '5rem'}} className={Styles.cardTitle}>
                     <p className="card-text bg-white py-3 px-4">{dataItem.Title}</p>
                 </div>
