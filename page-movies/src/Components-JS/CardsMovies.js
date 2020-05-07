@@ -19,8 +19,6 @@ const MOVIE_API_URL2 = `https://www.omdbapi.com/?apikey=745c4feb&t=${titleMovie}
     console.log(data);
     setNewFetch(data);
   };
-
-
     
     return (
         <div className="container d-flex justify-content-center mt-5">

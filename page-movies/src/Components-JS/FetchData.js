@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from "react";
-import CadsMovies from './CardsMovies';
-import Navbar from './Navbar';
-import fetchData from './GetMovie';
+import React, { useState } from "react";
 
-function Fetch({searchVal}) {
-  const [searchName, setSearchName] = useState(searchVal);
-  const [page,setPage] = useState(1) //con el botón agregaría mas paginas
-  const [listMovie, setListMovie] = useState([]);
+import CadsMovies from './CardsMovies';
+
+function Fetch({ page, setPage, listMovie }) {
+  
   const [disabledNext, setDisabledNext]= useState(false);
   const [disabledBack, setDisabledBack]= useState(false);
-  
-  useEffect(() => {
-    getMovie();
-  }, []);
-  
-  const getMovie = async () => {
-    const result = await fetchData(searchName, page);
-    setListMovie(result);
-  };
-  
+
   const pageChange = (e) =>{
     if ( e.target.innerHTML === '+'){ 
       if(page <10){
-        setPage(page + 1) 
-        getMovie()
+        setPage(page + 1)
         setDisabledBack(false)
       }else{
         setDisabledNext(true)
@@ -31,8 +18,7 @@ function Fetch({searchVal}) {
       
     } else if (e.target.innerHTML === '-'){
         if(page >= 1){
-          setPage(page - 1) 
-          getMovie()
+          setPage(page - 1)
           setDisabledNext(false)
         }else{
           setDisabledBack(true)
@@ -43,15 +29,14 @@ function Fetch({searchVal}) {
   
 return (
     <div className="App">
-        
-
-         <div className="row">  
-        {listMovie.map(item =>(            
-            <div className="col-sm-4" key={item.Title}>
-                <CadsMovies  dataItem={item}/>
-                <Navbar dataItem={item} />
-            </div>  
-         ))}
+         <div className="row mt-5 pt-5">
+        {listMovie.map(item => {
+            return (            
+                <div className="col-sm-4" key={item.imdbID}>
+                    <CadsMovies  dataItem={item}/>
+                </div>  
+            )
+         })}
       </div>
    
    <div className="container mt-4">

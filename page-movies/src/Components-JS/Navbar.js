@@ -1,17 +1,20 @@
-import React, {useState} from 'react';
-import Search from './SearchInput'
+import React from 'react';
 import Image  from '../Components-CSS/img/logo.svg';
-import '../Components-CSS/Navbar.css'
+import Search from './Search';
+import { Link } from 'react-router-dom'
 
-
-const Navbar = () => {
+const Navbar = ({ setSearchName }) => {
 
     return (
     <div className="container">
 
         <nav className="navbar navbar-toggler navbar-light bg-warning bg-warning px-0 fixed-top">
-            <img className="navbar-brand logoSmall" src={Image} />
-            <Search/>
+            <Link to='/Home'>
+                <img className="navbar-brand logoSmall" src={Image} />
+            </Link>
+
+            <Search setSearchName={setSearchName} />
+            
             <button 
             className="navbar-toggler" 
             type="button" 
@@ -24,12 +27,12 @@ const Navbar = () => {
             >
             <span className="navbar-toggler-icon"></span>
             </button>
-        
+
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="#" >Score Movies</a>
+                    <a className="nav-link" href="#">Score Movies</a>
                     </li> 
                     <li className="nav-item active">
                     <a className="nav-link" href="#">Recent Movies</a>
