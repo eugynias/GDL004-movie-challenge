@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Components-CSS/Search.css'
 
 const Search = ({ setSearchName }) => {
     const [searchMovie, setSearchMovie] = useState('');
@@ -23,7 +24,6 @@ const Search = ({ setSearchName }) => {
                     setSearchMovie(e.target.value)
                 })}
             />
-            <img width='21'alt='lupita'  src='https://image.flaticon.com/icons/svg/1086/1086933.svg'/>
         </form>
 
      );

@@ -28,6 +28,7 @@
   padding:1rem;
   width: 70%;
   transition:0.2s;
+  transform: translate(20%);
 }
 
 
@@ -40,6 +41,8 @@
 .avatarBatman {
   width: 70%;
   transition:0.2s;
+  transform: translate(20%);
+
 }
 
 .avatarBatman:hover {
