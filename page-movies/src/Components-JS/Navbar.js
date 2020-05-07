@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Image  from '../Components-CSS/img/logo.svg';
 
 
 const Navbar = ({dataItem}) => {
@@ -9,7 +10,7 @@ console.log('click');
     return (  
     <div className="container">
         <nav className="navbar navbar-toggler navbar-light bg-warning bg-warning px-0 fixed-top">
-            <a className="navbar-brand" href="#">Logo</a> 
+            <img className="navbar-brand logoSmall" src={Image} />
 
             <button 
             className="navbar-toggler" 
