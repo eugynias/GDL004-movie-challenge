@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 import CadsMovies from './CardsMovies';
@@ -6,6 +7,7 @@ function Fetch({ page, setPage, listMovie }) {
   
   const [disabledNext, setDisabledNext]= useState(false);
   const [disabledBack, setDisabledBack]= useState(false);
+
 
   const pageChange = (e) =>{
     if ( e.target.innerHTML === '+'){ 
@@ -29,6 +31,7 @@ function Fetch({ page, setPage, listMovie }) {
   
 return (
     <div className="App">
+
          <div className="row mt-5 pt-5">
         {listMovie.map(item => {
             return (            
@@ -37,9 +40,9 @@ return (
                 </div>  
             )
          })}
+
       </div>
-   
-   <div className="container mt-4">
+  <div className="container mt-4">
       <button disabled={disabledBack} onClick={pageChange} className="serch-button" type="button">-</button> 
       <button disabled={disabledNext} onClick={pageChange} className="serch-button" type="button">+</button>
     </div>
