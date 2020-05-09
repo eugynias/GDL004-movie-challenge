@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+}
+
+
+.home{
+    background-color: rgb(216, 216, 216);
+    min-height: 100vh;
+}
+.title{
+    text-align: center;
+    font-family: 'Geo', sans-serif;
+    font-size: 8em;
+    color: rgb(44, 44, 44);
+    margin: 0;
+    margin-top: 7rem;
+}
+.avatars {
+    margin: 0 auto;
+    width:90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatarSuperMan {
+  padding:1rem;
+  width: 70%;
+  transition:0.2s;
+  transform: translate(20%);
+}
+
+
+.avatarSuperMan:hover {
+  padding:1rem;
+  transition:0.2s;
+  width: 90%;
+}
+
+.avatarBatman {
+  width: 70%;
+  transition:0.2s;
+  transform: translate(20%);
+
+}
+
+.avatarBatman:hover {
+  width: 90%;
+  transition:0.2s;
+}

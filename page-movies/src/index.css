@@ -1,0 +1,14 @@
+
+
+.mt {
+    margin-top: 8rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .ml2 {
+        margin-left: 2rem;
+    }
+    .ml5 {
+    margin-left: 5rem;
+    }
+}
