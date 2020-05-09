@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import '../Components-CSS/FetchData.css';
 import CadsMovies from './CardsMovies';
-
+import Navbar from './Navbar'
 function Fetch({ page, setPage, listMovie }) {
   
   const [disabledNext, setDisabledNext]= useState(false);
