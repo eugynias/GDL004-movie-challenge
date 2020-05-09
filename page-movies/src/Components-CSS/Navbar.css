@@ -1,3 +1,7 @@
-.navbar-colorBG {
-    background: rgba(36, 116, 207, 0.733);
+.black {
+  background: #4482c3;  /* fallback for old browsers */
+}
+
+.nav-cont {
+  background-color: rgb(17, 16, 16);
 }
